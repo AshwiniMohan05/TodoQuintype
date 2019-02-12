@@ -1,0 +1,29 @@
+*
+{
+    margin : 0;
+    padding :0;
+}
+.todo-container
+{
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.todo-list
+{
+    margin-top : 20px;
+    width : 300px;
+    font-size: 40px;
+    margin-right : 10px;
+    margin-left :10px;
+}
+.todo-list .todo-list-item
+{
+    border: 1px solid black;
+}
+.todo-list-item
+{
+    margin-bottom : 30px;
+    height : 150px;
+}
