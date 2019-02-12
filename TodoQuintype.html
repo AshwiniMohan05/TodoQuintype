@@ -9,20 +9,36 @@
         <div class="todo-container">
 
             <h1>ToDo</h1>
-            <ul class="todo-list">
-                <li class="todo-list-item">Have breakfast <input type = "checkbox" checked ></li>
+            <ul class="todo-list" id = "todo-list">
+                <!-- <li class="todo-list-item">Have breakfast <input type = "checkbox" checked ></li>
                 <li class="todo-list-item">Having Breakfast at CTR</li>
                 <li class="todo-list-item">Go on walk in the evening</li>
                 <li class="todo-list-item" >Complete Assignments</li>
                 <li class="todo-list-item">Hang out with friends</li>
                 <li class="todo-list-item">Go to bed</li>
-                </li>
+                </li> -->
             </ul>
+            <button onclick = "openPrompt()">Click to add..</button>
 
         </div>
         <script>
             var list = [];
-            
+            var todoText;
+            function openPrompt()
+            {
+                todoText = window.prompt("Add the next ToDO list");
+                list.push(todoText);
+                for(var i= 0; i<list.length; i++)
+                {
+                    var parentElement = document.getElementById("todo-list");
+                    var existingChildElements = parentElement.innerHTML;
+                    var todo = list[i];
+                    var listTag = existingChildElements + "<li class='todo-list-item'>" + todo + "</li>";
+                    parentElement.innerHTML = listTag;
+                    // parentElement.insertAdjacentHTML('beforeend',listTag);
+                }
+            }
+
         </script>
     </body>
 
